@@ -439,7 +439,7 @@ const mobileMenu = (e) => {
   const highlightMenu = () => {
     const elem = document.querySelector('.highlight');
     const aboutMenu = document.querySelector('#about-page');
-    const referensMenu = document.querySelector('#referens-page');
+    const referensMenu = document.querySelector('#testimonialPage');
     const portfolioMenu = document.querySelector('#portfolio-page');
     const contactMenu = document.querySelector('#contact-page');
 
