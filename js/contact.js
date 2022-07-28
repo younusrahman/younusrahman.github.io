@@ -46,6 +46,7 @@ console.log("heloo")
 
       }
       else {
+        console.log(message)
         document.querySelector(".preloader").style.display = "none"
         swal({
           title: "Sorry " + name + " !",
