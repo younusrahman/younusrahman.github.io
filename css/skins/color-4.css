@@ -5,4 +5,5 @@
 
 #blurred-image-container .img-src {
   background: url("/img/bg4.jpg");
+  background-size: cover;
 }
