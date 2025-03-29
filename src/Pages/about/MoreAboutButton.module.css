@@ -1,0 +1,96 @@
+.container {
+  display: inline-block;
+  position: relative;
+  margin: 3rem auto;
+  width: 100%;
+  max-width: 300px;
+}
+
+.button {
+  position: relative;
+  padding: 1rem 2rem;
+  font-size: clamp(1.2rem, 4vw, 1.8rem);
+  font-weight: 700;
+  color: white;
+  background: rgba(0, 0, 0, 0.25);
+  backdrop-filter: blur(12px);
+  border-radius: 50px;
+  border: 2px solid var(--button-color);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  width: 100%;
+  text-align: center;
+}
+
+.text {
+  position: relative;
+  z-index: 4;
+  display: block;
+  transform: translateZ(20px);
+}
+
+.circle {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: var(--button-color);
+  border-radius: 50%;
+  z-index: 2;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 5px var(--button-color));
+}
+
+.circleFirst {
+  composes: circle;
+  top: -8px;
+  left: 15%;
+}
+
+.circleLast {
+  composes: circle;
+  bottom: -8px;
+  right: 15%;
+}
+
+.glow {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 120%;
+  height: 120%;
+  background: radial-gradient(
+    circle at center,
+    var(--button-color) 0%,
+    transparent 80%
+  );
+  z-index: 1;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 0;
+}
+
+.pulse {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: var(--button-color);
+  border-radius: 50px;
+  z-index: 0;
+  opacity: 0;
+}
+
+/* Responsive adjustments */
+@media (max-width: 480px) {
+  .button {
+    padding: 0.8rem 1.5rem;
+    font-size: clamp(1rem, 5vw, 1.4rem);
+  }
+  
+  .circle {
+    width: 15px;
+    height: 15px;
+  }
+}

@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Imperial+Script&display=swap');
+
+.font-imperial-script {
+  font-family: 'Imperial Script', cursive;
+}
+
+/*---------------
+global style
+----------------*/
+/* define custom css variables */
+:root {
+  --bg-black-900: #000000;
+  --bg-black-100: #dddddd;
+  --bg-black-50: #060607;
+  --bg-opacity: rgba(255, 255, 255, 0.5);
+  --text-black-900: #ecf0f1;
+  --text-black-700: #cfc8d6;
+  --text-black-600: #ecf0f1;
+  --text-black-300: #bbbbbb;
+  --dynamic-match-bg-img-color: red;
+
+  --text-primary: #E9ECEC;
+  --text-secondary: #999999;
+  --text-tertiary: #161616;
+
+  --outer-shadow-special: 3px 3px 3px #000000, -3px -3px 3px #3a3a3a;
+  --inner-shadow-special:
+    inset 3px 3px 3px #222327, inset -3px -3px 3px #363636;
+
+  --outer-shadow-0: 0 0 0 #d0d0d0, 0 0 0 #f8f8f8;
+  --inner-shadow:
+    rgba(0, 0, 0, 0.8) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+  --inner-shadow-0:
+    rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.5;
+
+  font-family: "Flamenco-Regular";
+  transition: all 1s ease;
+  height: auto;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+*:not(i) {
+  font-family: "Raleway", sans-serif;
+  font-weight: 400;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+}
+:before,
+:after {
+  box-sizing: border-box;
+}
+
+
+.img-src {
+  position: absolute;
+  background: url("./skins/default.jpg") center center;
+  background-size: cover;
+  width: 100%;
+  height: 100%;
+}
+
+.img-src.blurred-image {
+  opacity: 0;
+  -webkit-filter: blur(2rem) brightness(0.7);
+  -moz-filter: blur(2rem) brightness(0.7);
+  -ms-filter: blur(2rem) brightness(0.7);
+  -o-filter: blur(2rem) brightness(0.7);
+  filter: blur(2rem) brightness(0.7);
+}
+
+.blurBackground {
+  background: rgba(97, 96, 96, 0.1);
+  -webkit-background: rgba(97, 96, 96, 0.1);
+  -moz-background: rgba(97, 96, 96, 0.1);
+  -ms-background: rgba(97, 96, 96, 0.1);
+  -o-background: rgba(97, 96, 96, 0.1);
+  box-sizing: border-box;
+
+  -webkit-box-shadow: rgba(0, 0, 0, 0.9) 0px 19px 38px, rgba(0, 0, 0, 0.9) 0px 15px 12px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.9) 0px 19px 38px, rgba(0, 0, 0, 0.9) 0px 15px 12px;
+  -ms-box-shadow: rgba(0, 0, 0, 0.9) 0px 19px 38px, rgba(0, 0, 0, 0.9) 0px 15px 12px;
+  -o-box-shadow: rgba(0, 0, 0, 0.9) 0px 19px 38px, rgba(0, 0, 0, 0.9) 0px 15px 12px;
+  backdrop-filter: blur(1rem);
+  -webkit-backdrop-filter: blur(1rem);
+  -moz-backdrop-filter: blur(1rem);
+  -ms-backdrop-filter: blur(1rem);
+  -o-backdrop-filter: blur(1rem);
+  padding: 2rem;
+
+}

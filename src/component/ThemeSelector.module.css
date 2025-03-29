@@ -1,0 +1,88 @@
+/* ThemeSelector.module.css */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  z-index: 1000;
+}
+
+.mobileDropdown {
+  position: relative;
+  margin-right: 20px;
+}
+
+.selectedButton {
+  background: none;
+  border: none;
+  border-radius: 50%;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.colorCircle {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  transition: all 0.2s ease;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  margin-top: 8px;
+  background: rgba(30, 30, 30, 0.95);
+  border-radius: 12px;
+  padding: 12px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
+  z-index: 1001;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transform-origin: top left;
+}
+
+.mobileOptions {
+  right: 0;
+  left: auto;
+  bottom: 100%;
+  margin-bottom: 10px;
+  transform-origin: right bottom;
+}
+
+.mobileOptions.rightAligned {
+  right: 0;
+  left: auto;
+}
+
+.option {
+  background: none;
+  border: none;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  outline: none;
+}
+
+.option:hover .colorCircle {
+  transform: scale(1.1);
+  box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.4);
+}
+
+/* Animation enhancements */
+.selectedButton .colorCircle {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}

@@ -1,0 +1,192 @@
+/* navbar.module.css */
+.navbar {
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1000;
+}
+
+.navbarContainer {
+  margin-top: 2rem;
+  padding: 0.5rem;
+  position: fixed;
+  border-radius: 3rem;
+  display: flex;
+  align-items: center;
+  transition: 2s;
+  border-radius: 5rem;
+  background: rgba(97, 96, 96, 0.1);
+  box-shadow: rgba(0, 0, 0, 0.9) 0px 19px 38px, 
+              rgba(0, 0, 0, 0.9) 0px 15px 12px;
+  backdrop-filter: blur(1rem);
+}
+
+.icon {
+  font-size: 2.1rem;
+  color: white;
+}
+
+.navbarMenu {
+  display: flex;
+  list-style: none;
+  padding: 0 2rem;
+  margin: 0;
+  align-items: center;
+}
+
+.navbarItem {
+  margin: 0 1.25rem;
+  position: relative;
+}
+
+.navbarGroup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+
+.navbarLink {
+  color: white;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+.navbarLink:hover {
+  color:  var(--dynamic-match-bg-img-color);
+}
+
+.activeLink {
+  color:  var(--dynamic-match-bg-img-color);
+  font-weight: bold;
+}
+
+.highlight {
+  position: absolute;
+  bottom: -0.5rem;
+  left: 0;
+  right: 0;
+  height: 3px;
+  border-radius: 3px;
+  z-index: -1;
+}
+
+.mobileMenuButton {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 1001;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  outline: none;
+}
+
+.menuIcon {
+  color: white;
+  font-size: 1.8rem;
+}
+
+.menuOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  z-index: 999;
+}
+
+.propagationMenu {
+  position: fixed;
+  bottom: 6rem;
+  right: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 1rem;
+  z-index: 1000;
+}
+
+.propagationItem {
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  border-radius: 2rem;
+  padding: 0.8rem 1.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.propagationLink {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
+
+.propagationIcon {
+  font-size: 1.4rem;
+  display: flex;
+  transition: transform 0.2s ease;
+}
+
+.propagationLabel {
+  white-space: nowrap;
+}
+
+.themeSelectorContainer {
+  background: transparent;
+  padding: 0;
+  margin-right: 30px;
+  margin-bottom: 10px;
+}
+
+@media (max-width: 899px) {
+  .navbar {
+    display: none;
+  }
+}
+
+@media (min-width: 900px) {
+  .mobileMenuButton,
+  .menuOverlay,
+  .propagationMenu {
+    display: none;
+  }
+}
+
+.navbarItem .iconContainer svg {
+  width: 1.8rem;
+  height: 1.8rem;
+}
+
+/* Mobile */
+.propagationItem .propagationIconContainer svg {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+
+/* In navbar.module.css */
+.icon, .activeIcon {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.iconContainer, .propagationIconContainer {
+  perspective: 1000px; /* Adds depth to the rotation */
+}

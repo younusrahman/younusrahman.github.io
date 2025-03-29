@@ -1,0 +1,18 @@
+.contactSection {
+  padding: 4rem;
+  padding-top: 0
+}
+
+
+@media screen and (max-width: 600px) {
+.contactSection {
+  padding: 2rem;
+  padding-top: 0
+}
+}
+@media screen and (max-width: 350px) {
+.contactSection {
+  padding: 1rem;
+  padding-top: 0
+}
+}

@@ -1,0 +1,127 @@
+.tabsContainer {
+  padding: 0rem 1rem;
+  color: white;
+}
+
+.tabsWrapper {
+  border-radius: 1rem;
+}
+
+.tabs {
+  -webkit-tap-highlight-color: transparent;
+}
+
+.tabList {
+  border-bottom: 1px solid var(--dynamic-match-bg-img-color);
+  margin: 0 0 10px;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.tab {
+  display: inline-block;
+  border: none;
+  background: transparent;
+  position: relative;
+  list-style: none;
+  padding: 6px 12px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  color: inherit;
+  outline: none;
+  z-index: 1;
+}
+
+.tabSelected {
+  font-weight: bold;
+}
+
+.tabUnderline {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: white;
+  border-radius: 3px 3px 0 0;
+}
+
+.tabPanels {
+  position: relative;
+  min-height: 200px;
+}
+
+/* Animation styles */
+.tab-enter {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.tab-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+}
+
+.tab-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tab-exit-active {
+  opacity: 0;
+  transform: translateY(-20px);
+  transition: all 0.3s ease;
+}
+
+/* Responsive styles remain the same as your original */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .tabsContainer {
+    padding: 0rem 1.5rem;
+  }
+  
+  .tab {
+    padding: 6px 10px;
+    font-size: 1rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .tabsContainer {
+    padding: 0rem 2rem;
+  }
+  
+  .tab {
+    padding: 6px 12px;
+    font-size: 1.1rem;
+  }
+  
+  .tabList {
+    flex-wrap: nowrap;
+  }
+}
+
+@media (max-width: 767px) {
+  .tabList {
+    justify-content: flex-start;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  .tab {
+    display: inline-flex;
+    align-items: center;
+    min-height: 40px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .tabsContainer {
+    padding: 0rem;
+    color: white;
+  }
+}

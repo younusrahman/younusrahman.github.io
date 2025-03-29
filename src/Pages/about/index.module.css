@@ -1,0 +1,142 @@
+.section {
+  color: white;
+}
+
+.container {
+ margin: 0 4rem;
+}
+.wrap {
+  position: relative;
+  display: flex;
+}
+
+.col1,
+.col2 {
+  padding: 10px;
+  text-align: justify;
+  width: calc(50% + 220px);
+}
+.h2 {
+  font-size: rem;
+  font-size: 2rem;
+  color: var(--dynamic-match-bg-img-color);
+}
+
+.p {
+  margin: 0 0 1em;
+  font-size: 1rem;
+}
+.col1:before,
+.col2:before {
+  float: right;
+  width: 1px;
+  height: 90px;
+  content: " ";
+}
+.col2:before {
+  float: left;
+}
+.socialLinksgroup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  font-size: 3rem;
+  gap: 2rem;
+}
+.img {
+  float: right;
+  clear: right;
+  margin: 20px 20px 20px 20px;
+  border-radius: 50%;
+  border: 10px solid var(--dynamic-match-bg-img-color);
+  shape-outside: circle(50%);
+  opacity: 0;
+  width: 150px;
+  height: 400px;
+  animation: fadeIn 4s forwards;
+  box-shadow: var(--outer-shadow-special);
+}
+
+.goTo {
+  padding: 2rem;
+  text-align: end;
+  margin-top: 3rem;
+}
+.goToLink{
+font-weight: bold;
+font-size: 1.7rem;
+}
+@keyframes fadeIn {
+  50% {
+    width: 380px;
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+    width: 400px;
+  }
+}
+.col2 .img {
+  float: left;
+  margin: 20px 20px 20px 0;
+  clear: left;
+}
+.col1 .inner {
+  margin-right: 220px;
+}
+.col2 .inner {
+  margin-left: 220px;
+}
+.col2 {
+  margin-left: -440px;
+}
+@media screen and (max-width: 600px) {
+.container {
+ margin: 0 2rem;
+}
+}
+@media screen and (max-width: 350px) {
+.container {
+ margin: 0 1rem;
+}
+.blurBackground{
+  padding:1rem;
+}
+}
+@media screen and (max-width: 910px) {
+  .wrap {
+    display: block;
+  }
+  .col2:before {
+    display: none;
+  }
+  .col1,
+  .col2,
+  .col1 .inner,
+  .col2 .inner {
+    width: auto;
+    margin: 0;
+  }
+  .col2 .img {
+    display: none;
+  }
+  .img {
+    width: 50%;
+    height: auto;
+    min-width: 100px;
+    animation: scaleDown 1s forwards;
+  }
+  @keyframes scaleDown {
+    100% {
+      width: 50%;
+      height: auto;
+      opacity: 1;
+    }
+  }
+  .goTo{
+    display: flex;
+    justify-content: center;
+  }
+}
+

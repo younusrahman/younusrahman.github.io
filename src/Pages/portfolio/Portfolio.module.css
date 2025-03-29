@@ -1,0 +1,46 @@
+.section {
+  padding: 0rem 2rem 2rem 2rem;
+}
+.customTabs {
+}
+.portfolioItems {
+  display: grid;
+  gap: 1.5rem;
+  padding: 1rem;
+  width: 100%;
+}
+
+/* BIG screens (1024px+) */
+@media (min-width: 1024px) {
+  .portfolioItems {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+}
+
+/* MEDIUM screens (768px-1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .portfolioItems {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+}
+
+/* SMALL screens (767px and below) */
+@media (max-width: 767px) {
+  .portfolioItems {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 1rem;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  .portfolioItems {
+    padding: 0rem;
+  }
+}
+@media screen and (max-width: 350px) {
+  .section {
+    padding: 0rem 1rem 2rem 1rem;
+  }
+}
