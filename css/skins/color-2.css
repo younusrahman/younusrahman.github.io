@@ -1,8 +1,0 @@
-:root{
-	--skin-color:#00cec9;
-}
-
-#blurred-image-container .img-src {
-  background: url("/img/bg2.jpg ") center center;
-  background-size: cover;
-}
