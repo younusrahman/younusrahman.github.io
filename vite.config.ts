@@ -9,6 +9,7 @@ export default defineConfig({
     tsconfigPaths(),
     TanStackRouterVite({ target: "react", autoCodeSplitting: true }),
   ],
+  base: "/4sr",
   resolve: {
     alias: {
       "@/*": "src/*",
