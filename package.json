@@ -1,6 +1,6 @@
 {
   "name": "younusrahman",
-  "homepage": "https://younusrahman.github.io/younusrahman.github.io",
+  "homepage": "https://younusrahman.github.io",
   "version": "0.0.0",
   "private": true,
   "type": "module",
@@ -11,7 +11,7 @@
     "serve": "vite preview",
     "start": "vite",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d dist"
+    "deploy": "gh-pages -d build"
   },
   "devDependencies": {
     "@tanstack/react-router-devtools": "^1.114.27",
@@ -20,6 +20,7 @@
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
     "@vitejs/plugin-react": "^4.3.2",
+    "gh-pages": "^6.3.0",
     "typescript": "^5.8.2",
     "vite": "^6.0.3",
     "vite-tsconfig-paths": "^5.1.4"
@@ -31,7 +32,6 @@
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
-    "gh-pages": "^6.3.0",
     "motion": "^12.6.2",
     "nodemailer": "^6.10.0",
     "react": "^19.0.0",
