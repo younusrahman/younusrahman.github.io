@@ -130,15 +130,16 @@ export type ContactItemType = {
   hiddenCopyValue?: string;
 };
 
-export type NavItem = {
+type NavItem = {
   id: string;
   path: string;
-  icon: IconType;
+  icon: IconType; // or whatever type your icons use
   activeIcon: IconType;
   label: string;
   size: number;
-  activeSize: number; 
-};
+  activeSize: number;
+  children?: string[]; // Array of nested paths
+}
 
 export type {
   GlobalStateType,
@@ -149,4 +150,5 @@ export type {
   BackgroundImageWrapperType,
   RouteComponentProps,
   TabGroup,
+  NavItem,
 };

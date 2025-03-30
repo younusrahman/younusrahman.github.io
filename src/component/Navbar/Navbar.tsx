@@ -3,32 +3,15 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Link, useLocation } from "@tanstack/react-router";
 import { useGlobalState } from "context/GlobalProvider";
 import {
-  IoBriefcaseOutline,
-  IoBriefcase,
-  IoHomeOutline,
-  IoHome,
-} from "react-icons/io5";
-import { BsPersonVcard, BsPersonVcardFill } from "react-icons/bs";
-import {
-  MdOutlineContactMail,
-  MdContactMail,
   MdMenu,
   MdClose,
 } from "react-icons/md";
-import { IconType } from "react-icons";
 import ThemeSelector from "../ThemeSelector";
 import styles from "./navbar.module.css";
 import { defaultItems } from "./data";
+import { NavItem } from "context/types";
 
-type NavItem = {
-  id: string;
-  path: string;
-  icon: IconType;
-  activeIcon: IconType;
-  label: string;
-  size?: number;
-  activeSize?: number;
-};
+
 
 type NavbarProps = {
   items?: NavItem[];
@@ -74,7 +57,13 @@ const DesktopNavbar = ({ items }: { items: NavItem[] }) => {
   const [hoveredTab, setHoveredTab] = useState<string | null>(null);
   const { pathname } = useLocation();
 
-  const activeTab = items.find((item) => item.path === pathname)?.id || "home";
+const activeTab =
+  defaultItems.find(
+    (item) =>
+      item.path === pathname ||
+      item.children?.includes(pathname) ||
+      (pathname !== "/" && pathname.startsWith(item.path + "/"))
+  )?.id || "home";
 
   return (
     <motion.nav

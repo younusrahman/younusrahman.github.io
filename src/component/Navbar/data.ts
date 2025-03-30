@@ -29,6 +29,7 @@ export const defaultItems: NavItem[] = [
     icon: BsPersonVcard,
     activeIcon: BsPersonVcardFill,
     label: "About",
+    children: ["/more"], // Add nested paths here
     size: 21,
     activeSize: 23,
   },
