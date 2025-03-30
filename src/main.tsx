@@ -7,6 +7,8 @@ import {
   createRouter,
   createRoute,
   createRootRoute,
+  HistoryLocation,
+  createHashHistory,
 } from "@tanstack/react-router";
 import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 
@@ -42,7 +44,9 @@ const indexRouters = routerElements.map(({ element: Element, path }) =>
 
 const routeTree = rootRoute.addChildren(indexRouters);
 
-const router = createRouter({ routeTree });
+const hashHistory = createHashHistory();
+
+const router = createRouter({ routeTree, history: hashHistory});
 
 declare module "@tanstack/react-router" {
   interface Register {
