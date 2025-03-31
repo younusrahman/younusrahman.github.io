@@ -264,7 +264,7 @@ useEffect(() => {
                   whileTap={{ scale: 0.95 }}
                 >
                   <img
-                    src={`/dynamicImages/${img}`}
+                    src={imagePaths[img]}
                     alt={`Thumbnail ${index + 1}`}
                     loading="lazy"
                   />

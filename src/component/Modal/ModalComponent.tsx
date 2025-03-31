@@ -1,6 +1,7 @@
 import React from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Modal.module.css";
+import { IoMdCloseCircleOutline } from "react-icons/io";
 
 type AnimationType = "fade" | "slide" | "scale" | "flip";
 type EasingType = "linear" | "easeIn" | "easeOut" | "easeInOut";
@@ -93,7 +94,10 @@ const SuperAnimationModal: React.FC<SuperAnimationModalProps> = ({
                 onClick={onClose}
                 aria-label="Close modal"
               >
-                &times;
+                <IoMdCloseCircleOutline
+                  size={30}
+                  className={styles.closeIcon}
+                />
               </button>
               {children}
             </motion.div>

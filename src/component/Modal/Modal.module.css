@@ -35,17 +35,20 @@
 
 .closeButton {
   position: absolute;
-  top: 1rem;
+  color: white;
   right: 1rem;
-  background: none;
-  border: none;
-  font-size: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   cursor: pointer;
-  padding: 0.5rem;
-  line-height: 1;
+
   z-index: 10;
+  background-color: rgba(0, 0, 0, 0.742);
+  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
 }
 
-.closeButton:hover {
-  color: #666;
+.closeIcon:hover {
+  color: var(--dynamic-match-bg-img-color)
 }
