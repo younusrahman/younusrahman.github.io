@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Suspense, useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 import PortfolioItemContent from "./PortfolioItemContent";
@@ -6,6 +6,8 @@ import styles from "./PortfolioItem.module.css";
 import SuperAnimationModal from "component/Modal/ModalComponent";
 import { PortfolioItemType } from "context/types";
 import { PortfolioTab } from "Pages/portfolio";
+import { imagePaths } from "imageLoader";
+
 
 const PortfolioItem: React.FC<PortfolioItemType<PortfolioTab>> = ({
   imgSrc,
@@ -23,7 +25,6 @@ const PortfolioItem: React.FC<PortfolioItemType<PortfolioTab>> = ({
 
   return (
     <>
-      {/* Portfolio Item Card */}
       <motion.div
         className={styles.portfolioItem}
         onClick={() => setIsModalOpen(true)}
@@ -37,7 +38,7 @@ const PortfolioItem: React.FC<PortfolioItemType<PortfolioTab>> = ({
       >
         <div className={styles.imageContainer}>
           <motion.img
-            src={`dynamicImages/${imgSrc}`}
+            src={imagePaths[imgSrc]}
             alt={imgAlt}
             className={styles.thumbnail}
             whileHover={{

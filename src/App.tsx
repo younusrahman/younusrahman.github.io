@@ -4,6 +4,7 @@ import { useGlobalState } from "context/GlobalProvider";
 import { Outlet } from "@tanstack/react-router";
 export default function App() {
   const { color } = useGlobalState().THEMESELECTOR;
+
   React.useEffect(() => {
     document.documentElement.style.setProperty(
       "--dynamic-match-bg-img-color",

@@ -11,6 +11,7 @@ import styles from "./PortfolioItem.module.css";
 import { useGlobalState } from "context/GlobalProvider";
 import { PortfolioTab } from "Pages/portfolio";
 import { motion, AnimatePresence } from "framer-motion";
+import { imagePaths } from "imageLoader";
 
 interface PortfolioItemContentProps {
   category: PortfolioTab[];
@@ -153,7 +154,7 @@ useEffect(() => {
               exit="exit"
             >
               <img
-                src={`/dynamicImages/${screenshots[activeImageIndex]}`}
+                src={imagePaths[screenshots[activeImageIndex]]}
                 alt={`${title} - Screenshot ${activeImageIndex + 1}`}
                 loading="lazy"
               />

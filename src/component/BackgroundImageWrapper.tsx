@@ -1,15 +1,14 @@
 import { useGlobalState } from "context/GlobalProvider";
 import { BackgroundImageWrapperType } from "context/types";
-
-const BackgroundImageWrapper = ({
-  children,
-}: BackgroundImageWrapperType) => {
+import imgae from "assets/images/background/bg1.jpg";
+import { imagePaths } from "imageLoader";
+const BackgroundImageWrapper = ({ children }: BackgroundImageWrapperType) => {
   const { THEMESELECTOR } = useGlobalState();
 
   return (
     <div
       style={{
-        backgroundImage: `url(src/assets/images/${THEMESELECTOR.backgroundImage})`,
+        backgroundImage: `url(${imagePaths["background/"+THEMESELECTOR.backgroundImage]})`,
         backgroundSize: "cover",
         backgroundAttachment: "fixed",
         minHeight: "100vh",
