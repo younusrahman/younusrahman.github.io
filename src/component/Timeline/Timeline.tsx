@@ -1,45 +1,13 @@
-import React from "react";
 import styles from "./Timeline.module.css";
 import { QualificationsTabType } from "component/about/Qualifications/Qualifications";
-import { useGlobalState } from "context/GlobalProvider";
-
-// Base type that all timeline items must have
-type TimelineItemBase = {
-  id: string;
-  title: string;
-  icon: React.ComponentType;
-  date?: string;
-  location?: string;
-};
-
-// Union type for all possible timeline item variations
-type TimelineItem = TimelineItemBase &
-  (
-    | {
-        groups?: {
-          name: string;
-          alignment: "left" | "right";
-          items: string[];
-        }[];
-        items?: never;
-      }
-    | {
-        items?: {
-          text: string;
-          alignment: "left" | "right";
-        }[];
-        groups?: never;
-      }
-  );
+import { TimelineItem } from "context/types";
 
 interface TimelineProps {
   items: TimelineItem[];
   alternate?: boolean;
   tab: QualificationsTabType;
 }
-
 const Timeline = ({ items, alternate = true, tab }: TimelineProps) => {
-  const {SMALL} = useGlobalState().SCREENSIZE
   return (
     <div className={styles.timeline}>
       <div className={styles.row}>
@@ -77,11 +45,7 @@ const Timeline = ({ items, alternate = true, tab }: TimelineProps) => {
                       )}
                       {group.name}
                       {group.alignment === "right" && (
-                        <span
-                          className={styles.bullet}
-                        >
-                          &#8226;
-                        </span>
+                        <span className={styles.bullet}>&#8226;</span>
                       )}
                     </h4>
                     <div
@@ -116,5 +80,4 @@ const Timeline = ({ items, alternate = true, tab }: TimelineProps) => {
     </div>
   );
 };
-
 export default Timeline;

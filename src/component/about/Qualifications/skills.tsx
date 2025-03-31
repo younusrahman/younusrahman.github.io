@@ -6,7 +6,7 @@ const Skills: React.FC = () => {
   return (
     <div className="skills tab-content active">
       <div className="row">
-        <Timeline items={skillsData} alternate={true} tab="Skills" />
+        <Timeline items={skillsData} tab="Skills" />
       </div>
     </div>
   );

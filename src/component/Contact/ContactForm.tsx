@@ -171,7 +171,7 @@ const ContactForm: React.FC = () => {
   const buttonStateVariants = {
     initial: { opacity: 1, backgroundColor: color},
     loading: {
-      backgroundColor: {color},
+      backgroundColor: color,
       transition: { duration: 0.3 },
     },
     error: {
